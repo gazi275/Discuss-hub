@@ -1,7 +1,47 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
+
+    const {  signin } = useContext(AuthContext) 
+    const navigate= useNavigate()
+ 
+     const handleSubmit = (e) => {
+         e.preventDefault();
+ 
+         
+        
+         const email = e.target.email.value;
+ 
+         const password = e.target.password.value;
+        console.log(email,password);
+ 
+ 
+       
+         
+ 
+ 
+         signin(email, password)
+             .then(res => {
+                console.log(res);
+                 toast.success('User logged in successfully');
+                 navigate('/')
+             })
+             .catch(error => {
+                console.log(error);
+                 toast.error("your email or password is incorrect")
+             })
+     }
+ 
+
+
+
+
+
+
     return (
         <div>
          
@@ -41,7 +81,7 @@ const Login = () => {
                 <p className="text-gray-100">
                     or use email your account
                 </p>
-                <form  className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+                <form onSubmit={handleSubmit} className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
                     <div className="pb-2 pt-4">
                         <input type="email" name="email" id="email" placeholder="Email" className="block w-full p-4 text-lg rounded-sm bg-black"/>
                     </div>
