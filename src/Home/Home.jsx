@@ -1,14 +1,15 @@
-import Login from "../Register/Login";
-import Register from "../Register/Register";
+
+import Footer from "../Shared/footer";
 import Banner from "./Banner";
+import Cards from "./Cards";
 
 
 const Home = () => {
     return (
         <div className="max-w-[1440px] mx-auto ">
             <Banner></Banner>
-            <Login></Login>
-            <Register></Register>
+            <Cards></Cards>
+           <Footer></Footer>
         </div>
     );
 };

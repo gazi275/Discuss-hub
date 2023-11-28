@@ -5,7 +5,7 @@ const Banner = () => {
         <div className=''>
            
 
-<section className="relative h-screen flex flex-col items-center justify-center text-center text-white ">
+<section className="relative h-[700px] flex flex-col items-center justify-center text-center text-white ">
     <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
         <video className="min-w-full min-h-full absolute object-cover"
             src={video}
