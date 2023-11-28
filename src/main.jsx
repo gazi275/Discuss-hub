@@ -9,6 +9,10 @@ import Home from './Home/Home.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import Login from './Register/Login.jsx';
 import Register from './Register/Register.jsx';
+import Dashboard from './Dashboard/Dashboard.jsx';
+import MyProfile from './Dashboard/Componenets/MyProfile.jsx';
+import Add from './Dashboard/Componenets/Add.jsx';
+import MyPost from './Dashboard/Componenets/MyPost.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +34,31 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+
+    path: "dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "myprofile",
+        element:<MyProfile></MyProfile>
+      },
+      {
+        path: "add",
+        element:<Add></Add>
+      },
+      {
+        path: "mypost",
+        element:<MyPost></MyPost>
+      },
+    
+    
+    
+    
+    ]
+
+
+  }
 ]);
 
 

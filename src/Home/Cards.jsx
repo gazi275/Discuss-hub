@@ -2,9 +2,9 @@
 
 const Cards = () => {
     return (
-        <div>
+        <div className="space-y-6">
            
-<div className="h-screen w-screen flex justify-center items-center bg-slate-900 ">
+<div className=" flex justify-center items-center bg-slate-900 ">
       <div className="bg-slate-800 text-white rounded-lg  w-[34rem] space-y-6 p-10">
        
         <div className="flex space-x-4 items-center ">
