@@ -13,6 +13,7 @@ import Dashboard from './Dashboard/Dashboard.jsx';
 import MyProfile from './Dashboard/Componenets/MyProfile.jsx';
 import Add from './Dashboard/Componenets/Add.jsx';
 import MyPost from './Dashboard/Componenets/MyPost.jsx';
+import Contact from './Contact/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element:<Register></Register>
+      },
+      {
+        path: "/contact",
+        element:<Contact></Contact>
       },
     ],
   },
