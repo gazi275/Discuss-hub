@@ -106,7 +106,7 @@ const Navbar = () => {
           </li></NavLink>
 
           <NavLink
-          to="/myAssignment"
+          to="/payment"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
           }

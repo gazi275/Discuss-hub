@@ -9,7 +9,7 @@ const MyProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5001/post');
+        const response = await fetch('https://discuss-hubs.vercel.app/post');
         
         if (!response.ok) {
           throw new Error('Network response was not ok');

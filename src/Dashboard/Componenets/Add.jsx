@@ -25,7 +25,7 @@ const Add = () => {
 
        const posts={title,email,name, upvote,image,time ,description,downvote,tag};
         console.log(posts);
-        fetch("http://localhost:5001/posts", {
+        fetch("https://discuss-hubs.vercel.app/posts", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

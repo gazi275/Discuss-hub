@@ -9,7 +9,7 @@ const Cards = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5001/post');
+        const response = await fetch('https://discuss-hubs.vercel.app/post');
         
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -32,11 +32,12 @@ console.log(postData);
 
     return (
         <div className=" ">
+          
           <div className="flex flex-wrap justify-center text-center ">
                     <div className=" lg:w-6/12 px-4">
                       
                         <h1 className="text-gray-900 text-4xl font-bold mb-8">
-                            Meet the Team
+                         See Your Posts
                         </h1>
 
                         

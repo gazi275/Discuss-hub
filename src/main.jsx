@@ -14,7 +14,10 @@ import MyProfile from './Dashboard/Componenets/MyProfile.jsx';
 import Add from './Dashboard/Componenets/Add.jsx';
 import MyPost from './Dashboard/Componenets/MyPost.jsx';
 import Contact from './Contact/Contact.jsx';
-import Cards from './Home/Cards.jsx';
+
+import CardDetails from './Card/CardDetails.jsx';
+import Payment from './payment/Payment.jsx';
+import Comment from './Comment/Comment.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +41,22 @@ const router = createBrowserRouter([
         path: "/contact",
         element:<Contact></Contact>
       },
-      
+      {
+        path:"/details/:id",
+        element:<CardDetails></CardDetails>,
+        loader:({params})=>{
+     
+
+          return fetch(`https://discuss-hubs.vercel.app/details/${params.id}`)}
+      },
+      {
+        path: "/payment",
+        element:<Payment></Payment>
+      },
+      {
+        path: "/comment",
+        element:<Comment></Comment>
+      },
         
       
     ],
@@ -59,8 +77,9 @@ const router = createBrowserRouter([
       {
         path: "mypost",
         element:<MyPost></MyPost>,
-        loader: () => fetch("http://localhost:5001/post"),
+        loader: () => fetch("https://discuss-hubs.vercel.app/post"),
       },
+     
     
     
     

@@ -3,7 +3,7 @@
 const TablePost = ({table}) => {
    const deleted=()=>{
 
-        fetch(`http://localhost:5001/posted/${table._id}`, {
+        fetch(`https://discuss-hubs.vercel.app/posted/${table._id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

@@ -4,6 +4,7 @@ import Footer from "../Shared/footer";
 import Announments from "./Announments";
 import Banner from "./Banner";
 import Cards from "./Cards";
+import ExtraSection from "./ExtraSection";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <Cards></Cards>
             <Announments></Announments>
             {/* <Dashboard></Dashboard> */}
+            <ExtraSection></ExtraSection>
            <Footer></Footer> 
         </div>
     );
