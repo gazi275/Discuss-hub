@@ -2,7 +2,7 @@ import './Banner.css'
 import video from './../assets/pexels-tony-schnagl-5527787 (2160p).mp4';
 const Banner = () => {
     return (
-        <div className=''>
+        <div className='mb-20'>
            
 
 <section className="relative h-[700px] flex flex-col items-center justify-center text-center text-white ">
@@ -27,8 +27,8 @@ const Banner = () => {
         placeholder="Search something.." /> 
     </div>
 </div>
-        <h1 className="font-light text-6xl">full Hero Video</h1>
-        <h3 className="font-light text-3xl">with TailwindCSS</h3>
+        <h1 className="font-light text-6xl">Post Your Posts</h1>
+        <h3 className="font-light text-3xl">with Discuss-Hub </h3>
     </div>
 </section>
 

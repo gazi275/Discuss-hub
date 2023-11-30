@@ -1,7 +1,32 @@
+import { useEffect, useState } from "react";
+import Card from "../../Home/Card";
 
 
 
 const MyProfile = () => {
+    const [postData, setPostData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/post');
+        
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+        setPostData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+    
+  }, []);
+  console.log(postData);
+  
     return (
         <div>
          <body className="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover"
@@ -116,7 +141,12 @@ const MyProfile = () => {
 
         </div>
 
-
+        <div className="grid grid-cols-1  gap-2    md:grid-cols-3 lg:grid-cols-4" style={{ backgroundImage: 'url("https://i.ibb.co/vhtY2fV/images-2.jpg")' }}>
+            
+            {
+    postData?.map(card=> <Card key={card.id} card={card}></Card>)
+ }  
+            </div>
         
         
 

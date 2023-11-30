@@ -21,9 +21,9 @@ const Add = () => {
         const image = e.target.image.value;
          const time = e.target.time.value;
           const description = e.target.description.value;
-       
+       const tag=e.target.tag.value;
 
-       const posts={title,email,name, upvote,image,time ,description,downvote};
+       const posts={title,email,name, upvote,image,time ,description,downvote,tag};
         console.log(posts);
         fetch("http://localhost:5001/posts", {
             method: "POST",

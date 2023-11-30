@@ -14,6 +14,7 @@ import MyProfile from './Dashboard/Componenets/MyProfile.jsx';
 import Add from './Dashboard/Componenets/Add.jsx';
 import MyPost from './Dashboard/Componenets/MyPost.jsx';
 import Contact from './Contact/Contact.jsx';
+import Cards from './Home/Cards.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,9 @@ const router = createBrowserRouter([
         path: "/contact",
         element:<Contact></Contact>
       },
+      
+        
+      
     ],
   },
   {
@@ -54,7 +58,8 @@ const router = createBrowserRouter([
       },
       {
         path: "mypost",
-        element:<MyPost></MyPost>
+        element:<MyPost></MyPost>,
+        loader: () => fetch("http://localhost:5001/post"),
       },
     
     
