@@ -27,8 +27,10 @@ const Banner = () => {
         placeholder="Search something.." /> 
     </div>
 </div>
-        <h1 className="font-light text-6xl">Post Your Posts</h1>
-        <h3 className="font-light text-3xl">with Discuss-Hub </h3>
+        <h1 className="font-light text-6xl  text-gray-200 ">Populer Tags</h1>
+       <div className=''>
+       <h3 className="font-light text-3xl"> # cooking, book, coding,Travel </h3>
+       </div>
     </div>
 </section>
 
