@@ -10,7 +10,7 @@ const Cards = () => {
     const fetchData = async () => {
       try {
         const response = await fetch('https://discuss-hubs.vercel.app/post');
-        
+        console.log(response);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

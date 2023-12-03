@@ -18,6 +18,7 @@ import Contact from './Contact/Contact.jsx';
 import CardDetails from './Card/CardDetails.jsx';
 import Payment from './payment/Payment.jsx';
 import Comment from './Comment/Comment.jsx';
+import PrivateRoute from './Private/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,9 @@ const router = createBrowserRouter([
       },
       {
         path:"/details/:id",
-        element:<CardDetails></CardDetails>,
+        element:<PrivateRoute>
+          <CardDetails></CardDetails>
+        </PrivateRoute>,
         loader:({params})=>{
      
 
@@ -55,7 +58,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/comment",
-        element:<Comment></Comment>
+        element:<Comment></Comment>,
+        loader: () => fetch("https://discuss-hubs.vercel.app/comment"),
       },
         
       
@@ -64,7 +68,7 @@ const router = createBrowserRouter([
   {
 
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: "myprofile",

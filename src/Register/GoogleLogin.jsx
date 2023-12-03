@@ -12,7 +12,7 @@ const GoogleLogin = () => {
 
  const handleSocialLogin = () => {
      googleLogin()
-         .then(res => {
+         .then(() => {
           toast.success('User logged in successfully');
             
               navigate('/')

@@ -3,6 +3,7 @@ import Navbar from "./Shared/Navbar";
 
 import { useEffect } from "react";
 import { initFlowbite } from "flowbite";
+import { Toaster } from "react-hot-toast";
 
 
 const Root = () => {
@@ -14,7 +15,7 @@ const Root = () => {
         <div className="bg-white">
             <Navbar></Navbar>
           <Outlet></Outlet>
-          
+          <Toaster></Toaster>
 
           
         </div>
