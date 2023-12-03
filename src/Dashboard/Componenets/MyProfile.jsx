@@ -141,12 +141,7 @@ const MyProfile = () => {
 
         </div>
 
-        <div className="grid grid-cols-1  gap-2    md:grid-cols-3 lg:grid-cols-4" style={{ backgroundImage: 'url("https://i.ibb.co/vhtY2fV/images-2.jpg")' }}>
-            
-            {
-    postData?.map(card=> <Card key={card.id} card={card}></Card>)
- }  
-            </div>
+        
         
         
 
@@ -155,7 +150,14 @@ const MyProfile = () => {
   
     
 
-</body> 
+</body>
+<div className="grid grid-cols-1  gap-2    md:grid-cols-3 lg:grid-cols-4" style={{ backgroundImage: 'url("https://i.ibb.co/vhtY2fV/images-2.jpg")' }}>
+            
+            {
+    postData?.map(card=> <Card key={card.id} card={card}></Card>)
+ }  
+            </div>
+ 
         </div>
     );
 };
