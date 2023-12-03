@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import { AiOutlineLike } from "react-icons/ai";
+import { AiOutlineDislike } from "react-icons/ai";
 
 const Card = ({card}) => {
     console.log(card);
@@ -15,13 +16,17 @@ const Card = ({card}) => {
     <div>
         <p className="text-center text-gray-800 my-4">{card.description}</p>
     </div>
-    <div className="flex p-4 justify-between">
+    <div className=" p-4 justify-between">
       <div className="flex items-center space-x-2">
         <img className="w-full rounded-full" src={card.image} />
         <h2 className="text-gray-800 font-bold cursor-pointer">{card.name}</h2>
       </div>
-      <div className="flex space-x-2">
+      <div className=" flex items-center justify-between space-x-2">
+        <div className="flex text-lg gap-5">
+        <AiOutlineLike />
+        <AiOutlineDislike />
         
+        </div>
        
         <div>
         <Link to={`/details/${card._id}`}>
