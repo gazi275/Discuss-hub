@@ -6,7 +6,7 @@ const Card = ({card}) => {
     console.log(card);
     return (
         <div>
-           <div className=" bg-gray-100 flex justify-center items-center h-96 mt-10">
+           <div className=" bg-gray-100 flex justify-center items-center h-[500px] mt-10">
   <div className="w-[400px] container bg-white rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
     <div>
       <span className="text-white text-xs font-bold rounded-lg bg-green-500 inline-block mt-4 ml-4 py-1.5 px-4 cursor-pointer">{card.tag}</span>

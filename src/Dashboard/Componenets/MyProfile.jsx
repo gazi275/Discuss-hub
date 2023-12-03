@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Card from "../../Home/Card";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Cart from "../../Home/UserProfile/Cart";
 
 
 
@@ -72,8 +73,10 @@ const MyProfile = () => {
         
 <div className="grid grid-cols-1  gap-2    md:grid-cols-3 lg:grid-cols-4 ml-10 mr-10 " >
             
-            {
-    postData?.map(card=> <Card key={card.id} card={card}></Card>)
+            { 
+
+
+    postData?.map(card=> <Cart key={card.id} card={card}></Cart>)
  }  
             </div>
  
