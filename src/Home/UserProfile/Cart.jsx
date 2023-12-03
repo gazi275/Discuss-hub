@@ -6,8 +6,6 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Cart = ({card}) => {
      const {  user } = useContext(AuthContext);
-     console.log(card);
-     console.log(user);
   
     return (
       <div>

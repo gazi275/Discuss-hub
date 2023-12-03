@@ -79,12 +79,13 @@ console.log(postData);
     <tbody>
    {
    postData?.map(data=>
+    
 {user.email==data.email ? <div>
 
 <div>
             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                gfdh  {/* {data.title} */}
+                 {/* {data.title} */}
                 </th>
                 <td className="px-6 py-4">
                     {data.upvote}

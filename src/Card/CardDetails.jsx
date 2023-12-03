@@ -3,9 +3,9 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const CardDetails = () => {
     const id  = useParams()
-    console.log(id);
+
       const details=useLoaderData()
-      console.log(details.image);
+     
 
       const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,7 +13,7 @@ const CardDetails = () => {
         
        
          const comments = e.target.comment.value;
-         console.log(comments);
+   
 
          fetch("http://localhost:5001/comments", {
             method: "POST",
@@ -24,7 +24,7 @@ const CardDetails = () => {
            })
              .then((res) => res.json())
              .then((data) => {
-               console.log(data);
+          
             });
       }
 

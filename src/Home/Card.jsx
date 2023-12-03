@@ -3,7 +3,7 @@ import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 
 const Card = ({card}) => {
-    console.log(card);
+    
     return (
         <div>
            <div className=" bg-gray-100 flex justify-center items-center  mt-10 w-[350px]">

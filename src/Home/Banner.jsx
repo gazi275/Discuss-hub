@@ -1,6 +1,6 @@
 import './Banner.css'
 import video from './../assets/pexels-tony-schnagl-5527787 (2160p).mp4';
-const Banner = () => {
+const Banner = ({searchValue,handlePopularSearch}) => {
     return (
         <div className='mb-20'>
            
@@ -21,6 +21,8 @@ const Banner = () => {
         </div>
 
         <input
+        onChange={searchValue}
+        autoComplete='on'
         className="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
         type="text"
         id="search"
@@ -29,10 +31,10 @@ const Banner = () => {
 </div>
         <h1 className="font-light text-6xl  text-gray-200 ">Populer Tags</h1>
        <div className='flex justify-evenly'>
-       <button type="submit" className="btn">cooking</button>
-       <button type="submit" className="btn">book</button>
-       <button type="submit" className="btn">travel</button>
-       <button type="submit" className="btn">coding</button>
+       <button onClick={()=>handlePopularSearch('cooking')} className="btn">cooking</button>
+       <button onClick={()=>handlePopularSearch('book')} className="btn">book</button>
+       <button onClick={()=>handlePopularSearch('travel')} className="btn">travel</button>
+       <button onClick={()=>handlePopularSearch('coding')} className="btn">coding</button>
        </div>
     </div>
 </section>
