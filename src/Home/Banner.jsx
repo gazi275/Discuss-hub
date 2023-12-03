@@ -28,8 +28,11 @@ const Banner = () => {
     </div>
 </div>
         <h1 className="font-light text-6xl  text-gray-200 ">Populer Tags</h1>
-       <div className=''>
-       <h3 className="font-light text-3xl"> # cooking, book, coding,Travel </h3>
+       <div className='flex justify-evenly'>
+       <button type="submit" className="btn">cooking</button>
+       <button type="submit" className="btn">book</button>
+       <button type="submit" className="btn">travel</button>
+       <button type="submit" className="btn">coding</button>
        </div>
     </div>
 </section>

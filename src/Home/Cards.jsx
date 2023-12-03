@@ -46,7 +46,7 @@ console.log(postData);
                         </p>
                     </div>
                 </div>
-           <div className="grid grid-cols-1  gap-2 mt-10    md:grid-cols-3 lg:grid-cols-4" >
+           <div className="grid grid-cols-1   mt-10  gap-20   md:grid-cols-3 lg:grid-cols-4" >
             
            {
    postData?.map(card=> <Card key={card.id} card={card}></Card>)
