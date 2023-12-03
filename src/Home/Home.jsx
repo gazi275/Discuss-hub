@@ -12,7 +12,9 @@ const Home = () => {
         <div className="max-w-[1440px] mx-auto space-y-6 ">
             <Banner></Banner>
             <Cards></Cards>
+            <div className="mt-32">
             <Announments></Announments>
+            </div>
             {/* <Dashboard></Dashboard> */}
             <ExtraSection></ExtraSection>
            <Footer></Footer> 

@@ -2,7 +2,7 @@
 
 const Announments = () => {
     return (
-        <div className="">
+        <div className="mt-32">
             <div className="mx-auto max-w-screen-lg bg-blue-500 p-8 text-white md:flex md:items-center md:justify-around md:p-16 lg:rounded-xl">
   <div className="mr-10 mb-10 md:mb-0">
     <h2 className="mb-8 max-w-lg text-3xl font-bold sm:text-4xl">Announcement banner for your new features</h2>
