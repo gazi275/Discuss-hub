@@ -4,6 +4,7 @@ import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 
@@ -37,7 +38,10 @@ const Add = () => {
            })
              .then((res) => res.json())
              .then((data) => {
-               console.log(data);
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success('Successfully created!');
+                }
                
             });
 

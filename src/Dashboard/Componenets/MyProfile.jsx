@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import Card from "../../Home/Card";
+
 import { AuthContext } from "../../Provider/AuthProvider";
 import Cart from "../../Home/UserProfile/Cart";
 

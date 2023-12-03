@@ -19,6 +19,7 @@ import CardDetails from './Card/CardDetails.jsx';
 import Payment from './payment/Payment.jsx';
 import Comment from './Comment/Comment.jsx';
 import PrivateRoute from './Private/PrivateRoute.jsx';
+import TablePost from './Dashboard/Componenets/tablePost.jsx';
 
 const router = createBrowserRouter([
   {
@@ -80,7 +81,7 @@ const router = createBrowserRouter([
       },
       {
         path: "mypost",
-        element:<MyPost></MyPost>,
+        element:<TablePost></TablePost>,
         loader: () => fetch("https://discuss-hubs.vercel.app/post"),
       },
      

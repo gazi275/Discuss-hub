@@ -1,11 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import TablePost from "./tablePost";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 
 const MyPost = () => {
-  const myPost=useLoaderData();
-  console.log(myPost);
+
+ 
+
     return (
         <div>
           <div className="-m-1.5 overflow-auto">
@@ -26,7 +29,17 @@ const MyPost = () => {
 </div>
 </div> 
           {
-   myPost?.map(table=> <TablePost key={table.id} table={table}></TablePost>)
+  user.email==postData.email ? 
+  
+  
+  <div>
+
+
+  </div> :
+  
+  
+  
+  <div></div>
 } 
 
 </div>
