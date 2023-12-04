@@ -15,7 +15,7 @@ const GoogleLogin = () => {
   const handleSocialLogin = () => {
     googleLogin()
       .then((res) => {
-        axios.post(`${serverURL}/users`, { email: res?.user?.email,name:res?.user?.displayName })
+        axios.post(`${serverURL}/users`, { email: res?.user?.email,name:res?.user?.displayName ,image:res?.user?.image})
           .then(res => {
             console.log("resssssssssss=>", res);
             toast.success('User logged in successfully');

@@ -39,7 +39,8 @@ const Register = () => {
                     .then(res => {
                         const newUsers = {
                             name: firstname,
-                            email: email
+                            email: email,
+                            image:image
                         }
                         axios.post(`${serverURL}/users`, newUsers)
                             .then(res => {
