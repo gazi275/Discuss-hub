@@ -12,7 +12,7 @@ import Register from './Register/Register.jsx';
 import Dashboard from './Dashboard/Dashboard.jsx';
 import MyProfile from './Dashboard/Componenets/MyProfile.jsx';
 import Add from './Dashboard/Componenets/Add.jsx';
-import MyPost from './Dashboard/Componenets/MyPost.jsx';
+
 import Contact from './Contact/Contact.jsx';
 
 import CardDetails from './Card/CardDetails.jsx';
@@ -21,6 +21,9 @@ import Comment from './Comment/Comment.jsx';
 import PrivateRoute from './Private/PrivateRoute.jsx';
 import TablePost from './Dashboard/Componenets/tablePost.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ManageUser from './Admin/ManageUser.jsx';
+import Profile from './Admin/Profile.jsx';
+import Announcement from './Admin/Announcement.jsx';
 
 const router = createBrowserRouter([
   {
@@ -77,8 +80,19 @@ const router = createBrowserRouter([
       },
       {
         path: "admin",
-        element:<div>admin comming soon</div>
+        element:<Profile></Profile>
       },
+      {
+        path: "manageUser",
+        element:<ManageUser></ManageUser>,
+        loader: () => fetch("http://localhost:5001/users")
+      },
+      {
+        path: "announcement",
+        element:<Announcement></Announcement>
+      },
+
+
       {
         path: "add",
         element:<Add></Add>
