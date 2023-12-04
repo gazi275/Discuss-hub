@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
@@ -24,7 +25,7 @@ const CardDetails = () => {
            })
              .then((res) => res.json())
              .then((data) => {
-          
+				toast.success('Successfully Added!');
             });
       }
 

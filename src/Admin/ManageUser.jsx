@@ -1,11 +1,33 @@
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 
+import toast from "react-hot-toast";
+
 const ManageUser = () => {
     const users=useLoaderData()
     console.log(users);
 
     
+
+
+
+    const handleMakeAdmin = user =>{
+        fetch(`http://localhost:5001/users/${user._id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({isAdmin : true}),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              
+                toast.success('Successfully added as an admin !');
+              
+            });
+    }
+
+
     const handleDeleteUser=(user)=>{
     fetch(`http://localhost:5001/users/${user._id}`, {
         method: "DELETE",
@@ -13,6 +35,9 @@ const ManageUser = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+            
+            toast.success('Successfully created!');
+          
         });
     }
     

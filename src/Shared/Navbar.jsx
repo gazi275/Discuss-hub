@@ -132,7 +132,7 @@ const Navbar = () => {
 
 
         <NavLink
-          to="/assignment"
+          to="/notification"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
           }

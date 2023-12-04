@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
+import { FaTrashAlt } from "react-icons/fa";
 
 
 const TablePost = ({table}) => {
@@ -32,14 +34,15 @@ console.log(postData);
 
 
 
-   const deleted=()=>{
+   const deleted=(user)=>{
 
-        fetch(`https://discuss-hubs.vercel.app/posted/${table._id}`, {
+        fetch(`https://discuss-hubs.vercel.app/posted/${user?._id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
+              toast.success('Successfully deleted!');
             });
     
     
@@ -92,9 +95,13 @@ console.log(postData);
                 <td className="px-6 py-4">
                    {data?.description}
                 </td>
-                <td className="px-6 py-4">
-                 delete
-                </td>
+                <td>
+                     <button
+                          onClick={() => deleted(user)}
+                            className="btn btn-ghost btn-lg">
+                            <FaTrashAlt className="text-red-600"></FaTrashAlt>
+                              </button>
+                              </td>
             </tr>
  
 

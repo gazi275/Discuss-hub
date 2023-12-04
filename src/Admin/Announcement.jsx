@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 
 
 
@@ -28,6 +29,7 @@ console.log(announces);
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast.success('Successfully created!');
       });
   };
 

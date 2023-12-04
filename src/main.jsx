@@ -24,6 +24,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ManageUser from './Admin/ManageUser.jsx';
 import Profile from './Admin/Profile.jsx';
 import Announcement from './Admin/Announcement.jsx';
+import Announments from './Home/Announments.jsx';
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element:<Home></Home>
+      },
+      {
+        path: "/notification",
+        element:<Announments></Announments>
       },
       {
         path: "/login",
@@ -119,6 +125,7 @@ const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
      <QueryClientProvider client={queryClient}>
+     <Toaster></Toaster>
     <AuthProvider>
     <RouterProvider router={router} />
     </AuthProvider>
