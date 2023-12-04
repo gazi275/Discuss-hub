@@ -1,6 +1,9 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
+import { serverURL } from "../utils/url";
+import axios from "axios";
 
 
 
@@ -8,14 +11,26 @@ const Navbar = () => {
 
   const [navOpen, setNavOpen] = useState(false)
   const [userOpen, setUserOpen] = useState(false)
-  const { user ,logOut } = useContext(AuthContext)
+  const { user ,logOut } = useContext(AuthContext) || {}
  console.log(user);
+
+ const { isLoading, data:userData } = useQuery({
+  queryKey: ['userData',user?.email,serverURL],
+  queryFn: async () => {
+      const res = await axios.get(`${serverURL}/users?email=${user?.email}`)
+      return res.data
+  }
+})
+
+
+ const admin = userData?.isAdmin || false;
+
 
   const HandlelogOut=()=>{
     logOut()
     .then(res=>console.log(res))
   }
-             
+      
 
 
     return (
@@ -60,7 +75,7 @@ const Navbar = () => {
         </div>
               <ul className="py-2" aria-labelledby="user-menu-button">
                 
-                <li> <NavLink to='/dashboard/myprofile'>
+                <li> <NavLink to= {`/dashboard/${admin?'admin':'myprofile'}`}>
                 <button className="block px-4 py-2 text-lg font-bold text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</button>
          
                 </NavLink>

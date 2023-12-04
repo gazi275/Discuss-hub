@@ -27,8 +27,20 @@ const Add = () => {
           const description = e.target.description.value;
        const tag=e.target.tag.value;
 
-       const posts={title,email,name, upvote,image,time ,description,downvote,tag};
-        console.log(posts);
+       const posts ={
+        title,
+        email,
+        name,
+        upvote,
+        downvote,
+        image,
+        time,
+        description,
+        tag
+       }
+
+        
+        // console.log(posts);
         fetch("https://discuss-hubs.vercel.app/posts", {
             method: "POST",
             headers: {

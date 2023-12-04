@@ -11,7 +11,7 @@ const TablePost = ({table}) => {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await fetch('https://discuss-hubs.vercel.app/post');
+      const response = await fetch(`https://discuss-hubs.vercel.app/postByUser?email=${user?.email}`);
       
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -75,39 +75,34 @@ console.log(postData);
                 </th>
             </tr>
         </thead>
-   <div>
-    <tbody>
+   
+    <tbody className="w-full">
    {
    postData?.map(data=>
     
-{user.email==data.email ? <div>
+   
 
-<div>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <tr key={data._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                 {/* {data.title} */}
+                 {data.title}
                 </th>
                 <td className="px-6 py-4">
-                    {data.upvote}
+                    {data?.upvote}
                 </td>
                 <td className="px-6 py-4">
-                   {data.description}
+                   {data?.description}
                 </td>
                 <td className="px-6 py-4">
                  delete
                 </td>
             </tr>
-</div>
-</div> :
-<div>
+ 
 
 
-</div>
-
-})
+)
 } 
 </tbody> 
-     </div> 
+      
     </table>
 </div>
 

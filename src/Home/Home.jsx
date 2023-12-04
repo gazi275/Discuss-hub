@@ -15,7 +15,7 @@ const Home = () => {
     const [searchValue, setSearchValue] = useState('')
 
     const { isLoading,isPending, isError, data:postData, refetch } = useQuery({
-        queryKey: ['postdata'],
+        queryKey: ['postdata',serverURL,searchValue],
         queryFn: async () => {
             const res = await axios.get(`${serverURL}/post?search=${searchValue.length > 0 ? searchValue : ''}`)
             return res.data
